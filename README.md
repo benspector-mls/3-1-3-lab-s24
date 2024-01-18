@@ -12,11 +12,12 @@
   - [Section 1.1 - getFirstThreeFantasyBooks](#section-11---getfirstthreefantasybooks)
     - [Function requirements](#function-requirements)
     - [Data formatting](#data-formatting)
+    - [Test](#test)
   - [Section 1.2 - renderBookList](#section-12---renderbooklist)
     - [Function Requirements](#function-requirements-1)
+    - [Testing](#testing)
     - [Slow API](#slow-api)
     - [Data Layer separation](#data-layer-separation)
-  - [Section 1.3 - Adding it to our app](#section-13---adding-it-to-our-app)
 - [Feature 2: Getting an author](#feature-2-getting-an-author)
   - [Section 2.1 - getAuthor](#section-21---getauthor)
     - [Function Requirements](#function-requirements-2)
@@ -96,7 +97,7 @@ Notice something about it: it ends with `.json`. This is how *this* API deals wi
 - It should return a promise
 - If there are no errors, the returned promise should resolve to an array of the first 3 books from the API
   - See the **Data Formatting** section for details on how to format each book in the array.
-- If there is a fetch error, catch the error,. `console.warn` the error message, and the returned promise should resolve to `null`. 
+- If there is a fetch error, catch the error,. `console.warn` the error message, and the returned promise should resolve to `null`.
 - If API response is not `ok`, then *you* should throw an error with a message of `"Failed to get fantasy books"`
   - If you set up your function right, that means your function would `console.warn` the error message, and then resolve to `null`
 - We do mean "first 3" — we double checked that URL, and there are definitely 3 books that meet all our needs. Please maintain the order so the tests pass (no sorting the books or anything)
@@ -111,7 +112,7 @@ The data you get back from the API is going to be a little messy. It's going to 
   subject_type: "subject",
   work_count: 13234,
   works: [
-    { // the first "work" 
+    { // the first "work"
       authors: [
         {
           key: '/authors/OL22098A',
@@ -153,9 +154,9 @@ We are going to ignore pretty much all of that data(which is common when dealing
       name: "Lewis Carroll"
       urlKey: "/authors/OL22098A",
     }
-    coverUrl: "http://covers.openlibrary.org/b/id/10527843-M.jpg"
+    coverUrl: "http://covers.openlibrary.org/a/id/10527843-M.jpg"
   },
-  // 4 more items
+  // 2 more items
 ]
 ```
 
@@ -164,16 +165,16 @@ Here's the fun part: format the response to make it look like our data! Here's s
 - `title`
   -  This is just the `title` from the work object
 - `author`
-  - Books can have more than one author, but we don't care for now. So take the first author from the `authors` array and make an object with the `name` and `key` properties. 
+  - Books can have more than one author, but we don't care for now. So take the first author from the `authors` array and make an object with the `name` and `key` properties.
   - `key` is being renamed to `urlKey` to make it a little clearer what that value actually is. It's basically the author's ID *plus* the route "handle" (`/authors`). We will use this `urlKey` later on in order to fetch that specific author's data.
 - `coverUrl`
   - The url extension for the cover art.
   - Our response gives us a `cover_id` in each work, but lets do some work upfront to convert the id to the image URL:
     ```
-    http://covers.openlibrary.org/b/id/[THE_ID_HERE]-M.jpg
+    http://covers.openlibrary.org/a/id/[THE_ID_HERE]-M.jpg
     ```
-  - For example, the id `13859660` corresponds to this image URL (test the URL in your browser!): `https://covers.openlibrary.org/a/id/13859660-M.jpg` 
-  
+  - For example, the id `13859660` corresponds to this image URL (test the URL in your browser!): `https://covers.openlibrary.org/a/id/13859660-M.jpg`
+
 
 ### Test
 
@@ -202,7 +203,7 @@ Don't worry about button functionality now, only rendering!
 
 ### Testing
 
-We've already created a `bookListEl` variable for you to use.What you need to do here is use your fetch function `getFirstThreeFantasyBooks` to get some books, and then invoke `renderBookList` with the already created `bookListEl` variable and your fetched `books` to render your books to the screen! 
+We've already created a `bookListEl` variable for you to use.What you need to do here is use your fetch function `getFirstThreeFantasyBooks` to get some books, and then invoke `renderBookList` with the already created `bookListEl` variable and your fetched `books` to render your books to the screen!
 
 You'll know you've done it if the tests are passing and the page loads up your books!
 
