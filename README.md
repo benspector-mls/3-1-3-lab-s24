@@ -153,12 +153,8 @@ We are going to ignore pretty much all of that data(which is common when dealing
     author: {
       name: "Lewis Carroll",
       urlKey: "/authors/OL22098A",
-    }
-<<<<<<< HEAD
-    coverUrl: "http://covers.openlibrary.org/a/id/10527843-M.jpg"
-=======
+    },
     coverUrl: "https://covers.openlibrary.org/a/id/10527843-M.jpg"
->>>>>>> 374adc613d845d3473e8aed9e50a6eda47e36aac
   },
   // 2 more items
 ]
@@ -175,11 +171,7 @@ Here's the fun part: format the response to make it look like our data! Here's s
   - The url extension for the cover art.
   - Our response gives us a `cover_id` in each work, but lets do some work upfront to convert the id to the image URL:
     ```
-<<<<<<< HEAD
-    http://covers.openlibrary.org/a/id/[THE_ID_HERE]-M.jpg
-=======
     https://covers.openlibrary.org/a/id/[THE_ID_HERE]-M.jpg
->>>>>>> 374adc613d845d3473e8aed9e50a6eda47e36aac
     ```
   - For example, the id `13859660` corresponds to this image URL (test the URL in your browser!): `https://covers.openlibrary.org/a/id/13859660-M.jpg`
 
@@ -302,7 +294,7 @@ Now, we aren't going to give you hints this time. Make sure you get the final fo
 ## Section 2.2 - renderAuthor
 Just like before, we need to go into `render-functions.js` and write a function `renderAuthor` that takes in a `div` element and an `author` object and renders it to the screen. This function will mutate the passed in `div` element. Here are the specific tags to add (in order and ONLY add these tags)
 
-- An `h2` with the text `Author Info`
+- An `h2` with the text `[AUTHOR NAME]`
 - An `img` tag with a `src` of the `picture` and an `alt` of `A picture of [AUTHOR NAME]`
 - A `p` tag with the text `Born: [AUTHOR BIRTH DATE]`
 - A `p` tag with the text from the `bio` property
