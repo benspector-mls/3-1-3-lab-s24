@@ -12,11 +12,12 @@
   - [Section 1.1 - getFirstThreeFantasyBooks](#section-11---getfirstthreefantasybooks)
     - [Function requirements](#function-requirements)
     - [Data formatting](#data-formatting)
+    - [Test](#test)
   - [Section 1.2 - renderBookList](#section-12---renderbooklist)
     - [Function Requirements](#function-requirements-1)
+    - [Testing](#testing)
     - [Slow API](#slow-api)
     - [Data Layer separation](#data-layer-separation)
-  - [Section 1.3 - Adding it to our app](#section-13---adding-it-to-our-app)
 - [Feature 2: Getting an author](#feature-2-getting-an-author)
   - [Section 2.1 - getAuthor](#section-21---getauthor)
     - [Function Requirements](#function-requirements-2)
@@ -197,6 +198,15 @@ Now that we have our data, we need to render it to the screen. You need to write
   - an `img` tag with a `src` of the `coverUrl` and an `alt` of `An old cover of [BOOK TITLE]`
   - a `p` tag with the text `Title: [BOOK TITLE]`
   - a `button` tag with the text `View [AUTHOR NAME]` and a `data-author-url-key` attribute with the value of `author.urlKey`
+  
+For example:
+```html
+<li>
+  <img src="https://covers.openlibrary.org/a/id/13859660-M.jpg" alt="An old cover of Treasure Island">
+  <p>Title: Treasure Island</p>
+  <button data-author-url-key="/author/OL25963A">View Robert Louis Stevenson</button>
+</li>
+```
 
 Don't worry about button functionality now, only rendering!
 
@@ -231,7 +241,7 @@ Just like before, we'll need to so some formatting of the data as well.
 ### Function Requirements
 - It should make a fetch to the correct, dynamic url
 - It should return a promise
-- If there are no errors, it should resolve a formatted `author` object
+- If there are no errors, it should resolve a formatted `author` object (see **Data Formatting** below for more details)
 - If there is a fetch error it should resolve `null` and `console.warn` the error message
 - If the API response is not `ok`, then *you* should throw an error with a message of `Failed to get author`
   - If you set up your function right, that means your function would `console.warn` the error message, and then return `null`
