@@ -151,12 +151,12 @@ We are going to ignore pretty much all of that data(which is common when dealing
   {
     title: "Alice's Adventures in Wonderland",
     author: {
-      name: "Lewis Carroll"
+      name: "Lewis Carroll",
       urlKey: "/authors/OL22098A",
     }
-    coverUrl: "http://covers.openlibrary.org/b/id/10527843-M.jpg"
+    coverUrl: "https://covers.openlibrary.org/a/id/10527843-M.jpg"
   },
-  // 4 more items
+  // 2 more items
 ]
 ```
 
@@ -171,7 +171,7 @@ Here's the fun part: format the response to make it look like our data! Here's s
   - The url extension for the cover art.
   - Our response gives us a `cover_id` in each work, but lets do some work upfront to convert the id to the image URL:
     ```
-    http://covers.openlibrary.org/b/id/[THE_ID_HERE]-M.jpg
+    https://covers.openlibrary.org/a/id/[THE_ID_HERE]-M.jpg
     ```
   - For example, the id `13859660` corresponds to this image URL (test the URL in your browser!): `https://covers.openlibrary.org/a/id/13859660-M.jpg` 
   
