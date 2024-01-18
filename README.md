@@ -151,10 +151,14 @@ We are going to ignore pretty much all of that data(which is common when dealing
   {
     title: "Alice's Adventures in Wonderland",
     author: {
-      name: "Lewis Carroll"
+      name: "Lewis Carroll",
       urlKey: "/authors/OL22098A",
     }
+<<<<<<< HEAD
     coverUrl: "http://covers.openlibrary.org/a/id/10527843-M.jpg"
+=======
+    coverUrl: "https://covers.openlibrary.org/a/id/10527843-M.jpg"
+>>>>>>> 374adc613d845d3473e8aed9e50a6eda47e36aac
   },
   // 2 more items
 ]
@@ -171,7 +175,11 @@ Here's the fun part: format the response to make it look like our data! Here's s
   - The url extension for the cover art.
   - Our response gives us a `cover_id` in each work, but lets do some work upfront to convert the id to the image URL:
     ```
+<<<<<<< HEAD
     http://covers.openlibrary.org/a/id/[THE_ID_HERE]-M.jpg
+=======
+    https://covers.openlibrary.org/a/id/[THE_ID_HERE]-M.jpg
+>>>>>>> 374adc613d845d3473e8aed9e50a6eda47e36aac
     ```
   - For example, the id `13859660` corresponds to this image URL (test the URL in your browser!): `https://covers.openlibrary.org/a/id/13859660-M.jpg`
 
@@ -198,6 +206,15 @@ Now that we have our data, we need to render it to the screen. You need to write
   - an `img` tag with a `src` of the `coverUrl` and an `alt` of `An old cover of [BOOK TITLE]`
   - a `p` tag with the text `Title: [BOOK TITLE]`
   - a `button` tag with the text `View [AUTHOR NAME]` and a `data-author-url-key` attribute with the value of `author.urlKey`
+  
+For example:
+```html
+<li>
+  <img src="https://covers.openlibrary.org/a/id/13859660-M.jpg" alt="An old cover of Treasure Island">
+  <p>Title: Treasure Island</p>
+  <button data-author-url-key="/author/OL25963A">View Robert Louis Stevenson</button>
+</li>
+```
 
 Don't worry about button functionality now, only rendering!
 
@@ -232,7 +249,7 @@ Just like before, we'll need to so some formatting of the data as well.
 ### Function Requirements
 - It should make a fetch to the correct, dynamic url
 - It should return a promise
-- If there are no errors, it should resolve a formatted `author` object
+- If there are no errors, it should resolve a formatted `author` object (see **Data Formatting** below for more details)
 - If there is a fetch error it should resolve `null` and `console.warn` the error message
 - If the API response is not `ok`, then *you* should throw an error with a message of `Failed to get author`
   - If you set up your function right, that means your function would `console.warn` the error message, and then return `null`
