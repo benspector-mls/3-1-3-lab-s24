@@ -5,7 +5,7 @@
 - [Game Plan](#game-plan)
   - [Timing](#timing)
 - [APIs](#apis)
-- [The App itself](#the-app-itself)
+- [User Stories](#user-stories)
   - [CSS](#css)
 - [Short Answers](#short-answers)
 - [Feature 1: Getting our books!](#feature-1-getting-our-books)
@@ -61,11 +61,12 @@ The two apis we'll use today are:
 You've used JSON Placeholder before, and we're going to use it to create a new user (it's one of the few free API's that will let us make our own data). We're also going to use Open Library's API to get some books and authors. We selected this API because it's a little more "real world" with lots of information and quirks. We've kept it focused this time, but keep your wits about you!
 
 
-# The App itself
-There are going to be 3 "features" to this app:
-- Get a few fantasy books
-- Click on a book's button to view the author
-- Totally unrelated: make a new user
+# User Stories
+
+Users should be able to do the following:
+- Users can see a few fantasy books
+- Users can click on a button for each book to view information about the author of that book
+- Totally unrelated: Users can fill out a form to make a new user
 
 Here's a final screenshot:
 
