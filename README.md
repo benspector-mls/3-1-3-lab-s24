@@ -38,7 +38,7 @@ Hello everyone! Congratulations on making it to the end of our first 3 modules. 
 Now, even if you are stressed because this is a  "big, scary test" what should you do? What we tell you to do every morning: breathe. Let the adrenaline flow through you, it's just your body trying to help. So let's let it do it's thing and pass by simply counting to 15. That may feel like *ages*, but remember those were **seconds** and you have **hours** to get this done. Whenever you're panicked about the time, remember this feeling.
 
 # Game Plan
-After you breathe and collect your senses, the next thing you should do is read over the entire test without coding a thing. This will help give you a lay of the land, and figure out if there are certain
+After you breathe and collect your senses, the next thing you should do is read over the entire test without coding a thing. This will help give you a lay of the land.
 
 As we said this assessment is about fetching and rendering. So to that end, we recommend you do the short answers first, as they have useful information about the test itself. Then tack each feature in the order its outlined below. Each little feature builds on the last and uses the same pattern which is:
 
